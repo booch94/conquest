@@ -7,8 +7,16 @@ namespace ConquestApp
     {
         static void Main(string[] args)
         {
-            Entity pesho = new Entity(100);
+            Human pesho = new Human(100, "Pesho", "Petrov", 100);
+
             Console.WriteLine(pesho.Health);
+            Console.WriteLine(pesho.FirstName);
+            Console.WriteLine(pesho.LastName);
+            Console.WriteLine(pesho.Stamina);
+            Console.WriteLine(pesho.Alive);
+
+            pesho.Health -= 100;
+            Console.WriteLine(pesho.Alive);
         }
     }
 }

@@ -18,21 +18,33 @@ namespace ConquestLib.Entities
             }
             set
             {
-                health += value;
+                health = value;
                 if (health <= 0)
                 {
                     alive = false;
                     Console.WriteLine("You are dead");
                 }
             }
+        }
 
+        public bool Alive
+        {
+            get
+            {
+                return alive;
+            }
+
+            set
+            {
+                alive = value;
+            }
         }
 
 
         public Entity(int initialHealth)
         {
-            health = initialHealth;
-            alive = true;
+            this.Health = initialHealth;
+            this.Alive = true;
         }
     }
 }
