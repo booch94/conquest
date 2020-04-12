@@ -1,5 +1,6 @@
 ﻿using System;
 using ConquestLib.Entities;
+using ConquestLib.Entities.Humans;
 
 namespace ConquestApp
 {
@@ -7,16 +8,11 @@ namespace ConquestApp
     {
         static void Main(string[] args)
         {
-            Human pesho = new Human(100, "Pesho", "Petrov", 100);
+            Human human1 = new Human(1, "Pesho", "Petrov", 100);
+            Warrior asparuh = new Warrior(100, "Han", "Asparuh", 100);
 
-            Console.WriteLine(pesho.Health);
-            Console.WriteLine(pesho.FirstName);
-            Console.WriteLine(pesho.LastName);
-            Console.WriteLine(pesho.Stamina);
-            Console.WriteLine(pesho.Alive);
-
-            pesho.Health -= 100;
-            Console.WriteLine(pesho.Alive);
+            asparuh.SetTarget(human1);
+            Console.WriteLine(asparuh.Target.Health);
         }
     }
 }
